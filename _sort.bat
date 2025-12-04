@@ -2,7 +2,7 @@
 REM --- Interactive Playlist Sorting Batch Script ---
 
 REM --- Configuration ---
-SET "SORT_SCRIPT_PATH=C:\Users\mgr\Entwicklung\PlaylistSorter\Playlist-Sorter.py"
+SET "SORT_SCRIPT_PATH=C:\path\to\playlist-sorter.py"
 SET "OUTPUT_SUFFIX=_sorted"
 REM ---------------------
 
