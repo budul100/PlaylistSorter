@@ -4,13 +4,12 @@
     // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
             "name": "Python Debugger: Python File",
             "type": "debugpy",
             "request": "launch",
             "program": "${file}",
-            "args": ["2024-12-14 - Damen.m3u"]
+            "args": ["C:\\Users\\mgr\\SportDJ\\_Sonstiges\\Playlists\\2023-12-03 - Herren.m3u", "C:\\Users\\mgr\\SportDJ\\_Sonstiges\\Playlists\\2023-12-03 - Herren_sorted.m3u"],
         }
     ]
 }
