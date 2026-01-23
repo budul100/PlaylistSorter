@@ -2,7 +2,7 @@
 REM --- Interactive Playlist Sorting Batch Script ---
 
 REM --- Configuration ---
-SET "SORT_SCRIPT_PATH=C:\path\to\playlist-sorter.py"
+SET "SORT_SCRIPT_PATH=.\playlist-sorter.py"
 SET "OUTPUT_SUFFIX=_sorted"
 REM ---------------------
 
@@ -25,18 +25,17 @@ REM --- 1. Get Input Path ---
 set "INPUT_PATH="
 set /p INPUT_PATH="Enter the path to the INPUT M3U file: "
 
-REM Check if the path is empty
-if "%INPUT_PATH%"=="" (
+REM Check if the path is empty (uses 'if not defined' to avoid syntax errors)
+if not defined INPUT_PATH (
     echo ERROR: Input path cannot be empty.
     goto AskInput
 )
 
-REM Quotations Marks at begin and end
-if "%INPUT_PATH:~0,1%"=="""" (
-    set "INPUT_PATH=%INPUT_PATH:~1,-1%"
-)
+REM Remove ALL double quotes from the variable to normalize it.
+REM This handles both quoted input (Drag&Drop) and unquoted input safely.
+set "INPUT_PATH=%INPUT_PATH:"=%"
 
-REM Check if the file exists (robustness check)
+REM Check if the file exists (Now we add quotes manually for safety)
 if not exist "%INPUT_PATH%" (
     echo ERROR: File not found at "%INPUT_PATH%". Please check the path and try again.
     goto AskInput
